@@ -152,6 +152,7 @@ var DomOutline = function (options) {
             if (self.opts.onClick) {
                 setTimeout(function () {
                     jQuery('body').on('click.' + self.opts.namespace, function(e){
+                        e.stopPropagation();
                         if (self.opts.filter) {
                             if (!jQuery(e.target).is(self.opts.filter)) {
                                 return false;
